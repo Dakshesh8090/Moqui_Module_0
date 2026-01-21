@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed-initial">
+
+
+    <party.Party partyId="P100" partyTypeEnumId="PERSON" createdDate="2026-01-19T15:23:00"/>
+    <party.Person partyId="P100" firstName="Dakshesh" lastName="Sherawat" dateOfBirth="2004-03-21"/>
+
+    <party.Party partyId="G100" partyTypeEnumId="PARTY_GROUP" createdDate="2026-01-20T12:23:00"/>
+    <party.PartyGroup partyId="G100" groupName="HOTWAX"/>
+
+
+    <party.ContactMech contactMechId="CM100" contactMechTypeId="EMAIL" infoString="dakshesh@gmail.com"/>
+    <party.ContactMech contactMechId="CM200" contactMechTypeId="TELECOM_NUMBER" infoString="+91-9999999999"/>
+    <party.ContactMech contactMechId="CM300" contactMechTypeId="TELECOM_NUMBER" infoString="+91-9999988888"/>
+
+
+    <party.PartyContactMech partyId="P100" contactMechId="CM100" fromDate="2026-01-19T15:23:00" thruDate="2027-01-19T15:23:00"/>
+    <party.PartyContactMech partyId="P100" contactMechId="CM200" fromDate="2026-01-19T15:23:00" thruDate="2026-01-19T15:23:00"/>
+    <party.PartyContactMech partyId="G100" contactMechId="CM300" fromDate="2026-01-20T12:23:00"/>
+
+</entity-facade-xml>
