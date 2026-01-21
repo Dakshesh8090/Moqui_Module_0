@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd">
+
+<!--    ye mera transition hai  create ka -->
+    <transition name="createTutorial">
+        <service-call name="create#tutorial.Tutorial"/>
+        <default-response url="."/>
+    </transition>
+
+
+<!--    ye mera transition hai delete kai liye -->
+    <transition name="deleteTutorial">
+        <service-call name="delete#tutorial.Tutorial"/>
+        <default-response url="."/>
+    </transition>
+
+<!--    data lekar atta hai backend se -->
+    <actions>
+        <entity-find entity-name="tutorial.Tutorial" list="tutorialList">
+            <search-form-inputs/></entity-find>
+    </actions>
+
+
+    <widgets>
+<!--        ye form hai -->
+<!--        ye use hota hai box creation kai liye-->
+        <container-dialog id="CreateTutorialDialog" button-text="Create Tutorial">
+            <form-single name="CreateTutorial" transition="createTutorial">
+                <auto-fields-entity entity-name="tutorial.Tutorial" field-type="edit"/>
+                <field name="submitButton"><default-field title="Create"><submit/></default-field></field>
+            </form-single>
+        </container-dialog>
+
+<!--        ye bna rhe hai hum delete recoed kai liye-->
+
+        <container-dialog id="DeleteTutorialDialog" button-text="Delete Tutorial">
+            <form-single name="DeleteTutorial" transition="DeleteTutorial">
+<!--                <auto-fields-entity entity-name="tutorial.Tutorial" field-type="edit"/>-->
+                <field name="tutorialId">
+                    <default-field><text-area/></default-field>
+                </field>
+                <field name="submitButton"><default-field title="Delete"><submit/></default-field></field>
+            </form-single>
+        </container-dialog>
+
+
+<!--        ye wala toh jo table deekh rhi hau screen pr uske liye hai -->
+            <form-list name="ListTutorials" list="tutorialList" header-dialog="true" skip-form="true">
+                <auto-fields-entity entity-name="tutorial.Tutorial" field-type="find-display"/>
+            </form-list>
+    </widgets>
+</screen>

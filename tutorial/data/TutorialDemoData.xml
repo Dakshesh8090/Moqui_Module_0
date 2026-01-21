@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-facade-xml type="demo">
+    <tutorial.Tutorial tutorialId="TestOne" tutorialName="Dakshesh" tutorialAge="21" description="Test One Description" tutorialMessage="I am intern"/>
+</entity-facade-xml>
