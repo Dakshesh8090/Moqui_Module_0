@@ -5,13 +5,23 @@
     <!--    this is my createParty transition-->
     <transition name="createParty">
         <service-call name="create#party.Party"/>
-        <default-response url="../PersonScreen"/>
+        <default-response url="."/>
     </transition>
 
     <!--    this is my delete Party transition-->
     <transition name="deleteParty">
         <service-call name="delete#party.Party"/>
         <default-response url="."/>
+    </transition>
+
+    <transition name="createPerson">
+        <service-call name="create#party.Person"/>
+        <default-response url="../PersonScreen"/>
+    </transition>
+
+    <transition name="createPartyGroup">
+        <service-call name="create#party.PartyGroup"/>
+        <default-response url="../PartyGroupScreen"/>
     </transition>
 
 
@@ -42,6 +52,25 @@
                 </field>
             <field name="submitButton"><default-field title="Delete"><submit/></default-field></field>
         </form-single>
+        </container-dialog>
+
+<!--this is a dialog of create Person-->
+        <container-dialog id="createPersonDialog" button-text="Create Person">
+            <form-single name="CreatePerson" transition="createPerson">
+                <auto-fields-entity entity-name="party.Person" field-type="edit"/>
+                <field name="submitPerson"><default-field title="Create"><submit/>
+                </default-field></field>
+            </form-single>
+        </container-dialog>
+
+
+<!--        this is a dialog for create PartyGroup-->
+        <container-dialog id="createPartyGroupDialog" button-text="Create Party Group">
+            <form-single name="CreatePartyGroup" transition="createPartyGroup">
+                <auto-fields-entity entity-name="party.PartyGroup" field-type="edit"/>
+                <field name="submitPartyGroup"><default-field title="Create"><submit/>
+                </default-field></field>
+            </form-single>
         </container-dialog>
         
 

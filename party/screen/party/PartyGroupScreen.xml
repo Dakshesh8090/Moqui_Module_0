@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd">
+
+    <actions>
+        <entity-find entity-name="party.PartyGroup" list="listPartyGroup">
+            <search-form-inputs/>
+        </entity-find>
+    </actions>
+
+    <widgets>
+
+        <label type="h1" text="Party Group Screen"/>
+
+        <form-list name="ListPartyGroup" list="listPartyGroup">
+            <auto-fields-entity entity-name="party.PartyGroup" field-type="find-display"/>
+        </form-list>
+
+    </widgets>
+
+
+</screen>
